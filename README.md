@@ -69,7 +69,7 @@ Memory is `torch.cuda.max_memory_allocated` during training, measured in a clean
 | Test execution accuracy | 0.690 | 0.726 | 0.782 | 0.866 |
 | OOD execution accuracy | 0.717 | 0.633 | 0.567 | 0.500 |
 
-![learning curve](learning_curve.png)
+![learning curve](image/image.png)
 
 The curve has **not plateaued** at 2,000 examples, so the answer to "how much data" is "more than 2,000 for this task". Meanwhile OOD accuracy falls steadily as in-distribution accuracy rises. Even 250 examples already scores below the few-shot base model on OOD (0.717 vs 0.80).
 
@@ -98,7 +98,7 @@ Base 0.583, QLoRA 0.553, LoRA 0.593. With n = 300 the standard error is about 2.
 | Join mismatch | 0.8% | 0.2% | 0.2% |
 | Ordering / limit | 0.2% | 0.2% | 0.0% |
 
-![error categories](error_categories.png)
+![error categories](image/image_2.png)
 
 Fine-tuning eliminated hallucinated columns and most structural errors. What remains is dominated by cases that look like **label noise or arbitrary dataset conventions**, from reading ten failures (not a systematic audit):
 - The gold SQL for "more than 245 runs" is `runs = "245"`, while the model's `runs > 245` is arguably more correct.
